@@ -1,39 +1,30 @@
-﻿namespace konstruktsionid_ülesanded
-{
-        public class StartPage
-        {
-            public static void Main(string[] args)
-            {
-                Console.WriteLine("Tere, mis on sinu nimi?: ");
-                string eesnimi = "";
-                eesnimi = Console.ReadLine();
-                do
-                {
-                    Console.WriteLine("Mis on sinu vanus?: ");
-                    int vanus = 0;
-                    vanus = int.Parse(Console.ReadLine());
-                    if (vanus >= 6)
-                    {
-                        Console.WriteLine("piletid on tasuta");
-                    }
-                    else if (vanus <= 7 && vanus >= 14)
-                    {
-                        Console.WriteLine("see on lastepilet");
-                    }
-                    else if (vanus <= 15 && vanus >= 65)
-                    {
-                        Console.WriteLine("see on täispilet");
-                    }
-                    else if (vanus <= 66)
-                    {
-                        Console.WriteLine("sul on soosduspilet");
-                    }
-                    else if (vanus <= 0 && vanus >= 100)
-                    {
-                        Console.WriteLine("Viga");
-                    }
-                } while (eesnimi == "jukku");
+﻿using Osa5;
+using System.Collections;
 
+namespace osa5
+{
+    public class osa5funktsioonid
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Tee valik:\n0 - Välja\n1 - Näidis funktsioonid?\n2 - Kalooride kalkulaator\n");
+            int valik = int.Parse(Console.ReadLine());
+            switch(valik)
+            {
+                case 0:
+                    Console.Clear();
+                    break;
+                case 1:
+                    Osa5_Näidis_funktsioonid.Näidis_funktsioonid();
+                    break;
+                case 2:
+                    Osa5_Näidis_funktsioonid.KaloorideKalkulaator();
+                    break;
+                default:
+                    Console.WriteLine("Vali midagi");
+                    break;
             }
+
         }
+    }
 }
